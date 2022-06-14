@@ -1,11 +1,11 @@
 #include <iostream>
 
 
-unsigned long long factorial(unsigned long n)
+unsigned long long factorial(unsigned int n);
 {
     if (n > 0)
     {
-        return n * factorial(n - 1);
+        return n * factorial(n);
     }
     else
     {
@@ -15,13 +15,10 @@ unsigned long long factorial(unsigned long n)
 
 
 int main()
-
 {
+    unsigned long long n;
 
-    unsigned int n = 8;
-
-    std::cout << "n! is " << factorial(n) << std::endl;
-
+    std::cout << "n! = " << factorial(n);
 
     return 0;
 }
