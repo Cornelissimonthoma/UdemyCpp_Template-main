@@ -12,18 +12,18 @@
 int main()
 {
 
-    int number;
+    int number1;
 
     bool is_prime = true; //initial value
 
     std::cout << "Please enter a number:" << std::endl;
-    std::cin >> number;
+    std::cin >> number1;
     std::cout << "you entered number: " << number << std::endl;
 
 
-    for (int i = 2; i < number; i++)
+    for (int i = 2; i < number1; i++)
     {
-        if (number % i == 0)
+        if (number1 % i == 0)
         {
             is_prime = false;
         }

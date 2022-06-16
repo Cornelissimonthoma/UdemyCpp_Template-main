@@ -1,72 +1,62 @@
 	.file	"Functions2.cc"
 	.text
-	.p2align 4
+	.p2align 4,,15
+	.def	__tcf_0;	.scl	3;	.type	32;	.endef
+	.seh_proc	__tcf_0
+__tcf_0:
+.LFB1064:
+	.seh_endprologue
+	leaq	_ZStL8__ioinit(%rip), %rcx
+	jmp	_ZNSt8ios_base4InitD1Ev
+	.seh_endproc
+	.p2align 4,,15
 	.globl	_Z7is_eveni
-	.type	_Z7is_eveni, @function
+	.def	_Z7is_eveni;	.scl	2;	.type	32;	.endef
+	.seh_proc	_Z7is_eveni
 _Z7is_eveni:
-.LFB1590:
-	.cfi_startproc
-	endbr64
-	movl	%edi, %eax
-	notl	%eax
+.LFB1061:
+	.seh_endprologue
+	movl	%ecx, %eax
+	andl	$1, %eax
+	xorl	$1, %eax
 	andl	$1, %eax
 	ret
-	.cfi_endproc
-.LFE1590:
-	.size	_Z7is_eveni, .-_Z7is_eveni
-	.section	.text.startup,"ax",@progbits
-	.p2align 4
+	.seh_endproc
+	.def	__main;	.scl	2;	.type	32;	.endef
+	.section	.text.startup,"x"
+	.p2align 4,,15
 	.globl	main
-	.type	main, @function
+	.def	main;	.scl	2;	.type	32;	.endef
+	.seh_proc	main
 main:
-.LFB1591:
-	.cfi_startproc
-	endbr64
+.LFB1062:
+	subq	$40, %rsp
+	.seh_stackalloc	40
+	.seh_endprologue
+	call	__main
 	xorl	%eax, %eax
+	addq	$40, %rsp
 	ret
-	.cfi_endproc
-.LFE1591:
-	.size	main, .-main
-	.p2align 4
-	.type	_GLOBAL__sub_I__Z7is_eveni, @function
+	.seh_endproc
+	.p2align 4,,15
+	.def	_GLOBAL__sub_I__Z7is_eveni;	.scl	3;	.type	32;	.endef
+	.seh_proc	_GLOBAL__sub_I__Z7is_eveni
 _GLOBAL__sub_I__Z7is_eveni:
-.LFB2072:
-	.cfi_startproc
-	endbr64
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 16
-	leaq	_ZStL8__ioinit(%rip), %rdi
-	call	_ZNSt8ios_base4InitC1Ev@PLT
-	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rdi
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
-	leaq	__dso_handle(%rip), %rdx
-	leaq	_ZStL8__ioinit(%rip), %rsi
-	jmp	__cxa_atexit@PLT
-	.cfi_endproc
-.LFE2072:
-	.size	_GLOBAL__sub_I__Z7is_eveni, .-_GLOBAL__sub_I__Z7is_eveni
-	.section	.init_array,"aw"
+.LFB1065:
+	subq	$40, %rsp
+	.seh_stackalloc	40
+	.seh_endprologue
+	leaq	_ZStL8__ioinit(%rip), %rcx
+	call	_ZNSt8ios_base4InitC1Ev
+	leaq	__tcf_0(%rip), %rcx
+	addq	$40, %rsp
+	jmp	atexit
+	.seh_endproc
+	.section	.ctors,"w"
 	.align 8
 	.quad	_GLOBAL__sub_I__Z7is_eveni
-	.local	_ZStL8__ioinit
-	.comm	_ZStL8__ioinit,1,1
-	.hidden	__dso_handle
-	.ident	"GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
-	.section	.note.GNU-stack,"",@progbits
-	.section	.note.gnu.property,"a"
-	.align 8
-	.long	 1f - 0f
-	.long	 4f - 1f
-	.long	 5
-0:
-	.string	 "GNU"
-1:
-	.align 8
-	.long	 0xc0000002
-	.long	 3f - 2f
-2:
-	.long	 0x3
-3:
-	.align 8
-4:
+.lcomm _ZStL8__ioinit,1,1
+	.ident	"GCC: (tdm64-1) 5.1.0"
+	.def	_ZNSt8ios_base4InitD1Ev;	.scl	2;	.type	32;	.endef
+	.def	_ZNSt8ios_base4InitC1Ev;	.scl	2;	.type	32;	.endef
+	.def	atexit;	.scl	2;	.type	32;	.endef
